@@ -11,17 +11,28 @@ body {
   min-height: 100vh;
   background: #368298;
 }
-
+.card {
+  background-color: #f08247;
+  width: 1000px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .sortable-list {
   background: #fff;
-  width: 445px;
-  border-radius: 6px;
+  width: 1000px;
   padding: 30px 25px 20px;
+  display: flex;
+  gap: 10px;
 }
 
 .sortable-list .item {
   list-style: none;
   display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 120px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 11px;
@@ -54,4 +65,31 @@ body {
 
 .item.dragging :where(.details, i) {
   opacity: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    margin: 1rem auto;
+    background-color: #f08247;
+    width: 80%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sortable-list {
+    background: #fff;
+    width: 80%;
+    height: 800px;
+    padding: 30px 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sortable-list .item {
+    display: flex;
+    flex-direction: row;
+    width: 160px;
+  }
 }
